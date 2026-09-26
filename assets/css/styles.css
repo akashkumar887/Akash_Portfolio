@@ -17,7 +17,7 @@
          -> Choose any color 
          -> Copy the color mode (HSL)
   */
-  --hue: 358;
+  --hue: 14;
   --first-color: hsl(var(--hue), 80%, 49%);
   --first-color-alt: hsl(var(--hue), 76%, 45%);
   --white-color: hsl(0, 0%, 98%);
@@ -310,7 +310,7 @@ img {
 }
 
 .about__image {
-  background-color: var(--conic-gradient);
+  background: var(--conic-gradient);
   height: 180px;
   border-radius: 2rem;
   display: grid;
@@ -902,5 +902,175 @@ img {
   }
   .scrollup{
     right: 4rem;
+  }
+}
+
+/* Education */
+.education__container {
+  row-gap: 2rem;
+}
+
+.education__card {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.education__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+}
+
+.education__date {
+  display: block;
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+  margin-bottom: .5rem;
+}
+
+.education__degree {
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
+
+.education__school {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .5rem;
+}
+
+.education__description {
+  color: var(--text-color);
+}
+
+/* Experience links */
+.experience__link {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.experience__link:hover {
+  color: var(--white-color);
+}
+
+/* Certifications */
+.certifications__container {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.certificate__card {
+  background-color: var(--container-color);
+  padding: 1.25rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: grid;
+  gap: 1.25rem;
+  transition: transform .4s, background-color .4s;
+}
+
+.certificate__card:hover {
+  transform: translateY(-.35rem);
+  background-color: hsl(var(--hue), 2%, 13%);
+}
+
+.certificate__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background-color: var(--white-color);
+  border-radius: 1.25rem;
+}
+
+.certificate__visual {
+  min-height: 150px;
+  border-radius: 1.25rem;
+  background: var(--conic-gradient);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .5rem;
+}
+
+.certificate__visual i {
+  font-size: 3rem;
+}
+
+.certificate__visual span {
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h3-font-size);
+}
+
+.certificate__visual--nvidia {
+  background: linear-gradient(135deg, #0b0b0b, #1f1f1f);
+}
+
+.certificate__data {
+  display: grid;
+  gap: .55rem;
+}
+
+.certificate__date {
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+}
+
+.certificate__name {
+  font-size: var(--h3-font-size);
+  line-height: 1.35;
+}
+
+.certificate__issuer {
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.certificate__description {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  line-height: 1.55;
+}
+
+.certificate__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.certificate__buttons .button {
+  padding: .75rem 1rem;
+  font-size: var(--small-font-size);
+}
+
+
+/* Large screens */
+@media screen and (min-width: 768px) {
+  .certifications__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .certifications__container {
+    grid-template-columns: repeat(3, 368px);
+    gap: 2rem;
+  }
+
+  .certificate__card {
+    padding: 1.5rem;
   }
 }
